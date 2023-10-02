@@ -58,6 +58,19 @@ class CarroRepositoryTest {
 
 
 //    testar método findById
+
+    @Test
+    public void findIdTest() {
+        CarroModel carro = carros.get(0);
+        CarroModel carroEncontrado = carroRepository.findById(carro.getId()).orElse(null);
+
+        Assertions.assertEquals(carro.getId(),          carroEncontrado.getId());
+        Assertions.assertEquals(carro.getMarca(),       carroEncontrado.getMarca());
+        Assertions.assertEquals(carro.getModelo(),      carroEncontrado.getModelo());
+        Assertions.assertEquals(carro.getAno(),         carroEncontrado.getAno());
+        Assertions.assertEquals(carro.getPreco(),       carroEncontrado.getPreco());
+        Assertions.assertEquals(carro.getFoto(),        carroEncontrado.getFoto());
+    }
 //    testar método findAll
 //    testar excessões
 
