@@ -71,7 +71,16 @@ class CarroRepositoryTest {
         Assertions.assertEquals(carro.getPreco(),       carroEncontrado.getPreco());
         Assertions.assertEquals(carro.getFoto(),        carroEncontrado.getFoto());
     }
+
 //    testar método findAll
+    @Test
+    public void findAllTest() {
+        List<CarroModel> todosCarros = carroRepository.findAll();
+        Assertions.assertFalse(todosCarros.isEmpty());
+        assertEquals(todosCarros.size(), (int) quantidade);
+    }
+
+
 //    testar excessões
 
 
